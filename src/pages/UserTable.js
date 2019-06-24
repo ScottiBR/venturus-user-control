@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUserData, removeUser } from "../actions";
 import Table from "../components/user/Table";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 class UserTable extends Component {
   constructor() {
@@ -45,6 +47,7 @@ class UserTable extends Component {
         <div className="app-main-content-header ">
           <h2 className="page-heading">users</h2>
           <div className="heading-border " />
+
           <input
             className="search-bar"
             type="text"
