@@ -1,3 +1,4 @@
+$button-visible: hidden;
 .user-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -9,7 +10,7 @@
   text-align: left;
 }
 .table-border-bottom {
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid $text-black;
 }
 .table-header th {
   text-transform: capitalize;
@@ -19,22 +20,30 @@
 }
 
 .table-body td {
+  font-size: 0.8em;
   font-weight: 100;
   color: $text-black;
   text-align: left;
-  padding: 15px 50px 15px 0px;
+  padding: 15px 30px 15px 0px;
 }
-.table-body-hover {
+
+.table-body tr {
   &:hover {
-    background-color: $tabke-row-hover;
+    background-color: $tabke-row-hover !important;
+    $button-visible: visible;
+    .remove-row {
+      padding: 15px;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+  &:nth-of-type(even) {
+    background-color: $table-even-rows;
   }
 }
 
-.table-body tr:nth-of-type(even) {
-  background-color: $table-even-rows;
-  &:hover {
-    background-color: $tabke-row-hover;
-  }
+.remove-row {
+  opacity: 0;
 }
 
 .table-link {

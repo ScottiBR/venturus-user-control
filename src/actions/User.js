@@ -1,4 +1,7 @@
-import { REQUEST_API_GET_USER_DATA } from "../constants/ActionTypes";
+import {
+  REQUEST_API_GET_USER_DATA,
+  REMOVE_USER
+} from "../constants/ActionTypes";
 import { REQUEST_API_GET_USER_POSTS } from "../constants/ActionTypes";
 import { REQUEST_API_GET_USER_ALBUMS } from "../constants/ActionTypes";
 import { REQUEST_API_GET_USER_PHOTOS } from "../constants/ActionTypes";
@@ -71,5 +74,12 @@ export const recieveUserRideDays = rideDays => {
   return {
     type: RECIEVE_API_GET_RIDE_DAYS,
     payload: rideDays
+  };
+};
+
+export const removeUser = id => {
+  return {
+    type: REMOVE_USER,
+    payload: id
   };
 };

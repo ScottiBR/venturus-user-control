@@ -1,7 +1,7 @@
 import React from "react";
 import TableRows from "./TableRows";
 
-const Table = ({ data, headers }) => {
+const Table = ({ data, headers, handleRemoveUser }) => {
   return (
     <table className="user-table">
       <thead className="table-header">
@@ -17,7 +17,7 @@ const Table = ({ data, headers }) => {
       </thead>
       <tbody className="table-body table-row-align-left">
         {data.map(data => {
-          return <TableRows data={data} />;
+          return <TableRows data={data} handleRemoveUser={handleRemoveUser} />;
         })}
       </tbody>
     </table>

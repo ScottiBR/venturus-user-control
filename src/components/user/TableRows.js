@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 const displayRideGroup = rideGroup => {
   const ALWAYS = 1;
@@ -43,7 +46,12 @@ const TableRows = props => {
     dayOfWeek && (dayOfWeek.length === 7 ? EVERY_DAY : dayOfWeek.join(", "));
 
   return (
-    <tr className="table-body-hover" key={id}>
+    <tr className="table-body" key={id}>
+      <td className="remove-row">
+        <a onClick={() => props.handleRemoveUser(id)}>
+          <FontAwesomeIcon icon={faTrashAlt} color="#3ac4aa" />
+        </a>
+      </td>
       <td>{username}</td>
       <td>{name}</td>
       <td className="table-link">{email}</td>

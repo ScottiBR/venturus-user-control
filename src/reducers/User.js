@@ -3,7 +3,8 @@ import {
   RECIEVE_API_GET_RIDE_DAYS,
   RECIEVE_API_GET_USER_POSTS,
   RECIEVE_API_GET_USER_ALBUMS,
-  RECIEVE_API_GET_USER_PHOTOS
+  RECIEVE_API_GET_USER_PHOTOS,
+  REMOVE_USER
 } from "../constants/ActionTypes";
 
 const INIT_STATE = {
@@ -77,6 +78,12 @@ export default (state = INIT_STATE, action) => {
             dayOfWeek: generateDayOfWeek()
           };
         })
+      };
+    }
+    case REMOVE_USER: {
+      return {
+        ...state,
+        userInfo: state.userInfo.filter(user => user.id !== action.payload)
       };
     }
     default:

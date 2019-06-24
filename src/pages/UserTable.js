@@ -1,15 +1,35 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUserData } from "../actions";
+import { getUserData, removeUser } from "../actions";
 import Table from "../components/user/Table";
 
 class UserTable extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchValue: ""
+    };
+  }
   componentDidMount() {
     this.props.getUserData();
   }
+  filterUserTable = ({ username, name }) => {
+    return (
+      name.toLowerCase().includes(this.state.searchValue.toLowerCase()) ||
+      username.toLowerCase().includes(this.state.searchValue.toLowerCase())
+    );
+  };
+
+  handleSearchValue = e => {
+    this.setState({ searchValue: e.target.value });
+  };
+  handleRemoveUser = id => {
+    this.props.removeUser(id);
+  };
   render() {
     const { userInfo } = this.props;
     const headers = [
+      "",
       "username",
       "name",
       "e-mail",
@@ -30,11 +50,17 @@ class UserTable extends Component {
             type="text"
             name="name"
             placeholder="Filter Table Content"
+            value={this.state.searchValue}
+            onChange={e => this.handleSearchValue(e)}
           />
         </div>
 
         <div className="app-main-content-body ">
-          <Table data={userInfo} headers={headers} />
+          <Table
+            data={userInfo.filter(this.filterUserTable)}
+            headers={headers}
+            handleRemoveUser={this.handleRemoveUser}
+          />
         </div>
       </div>
     );
@@ -47,5 +73,5 @@ const mapStateToProps = ({ user }) => {
 };
 export default connect(
   mapStateToProps,
-  { getUserData }
+  { getUserData, removeUser }
 )(UserTable);

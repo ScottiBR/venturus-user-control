@@ -10,3 +10,5 @@ export const RECIEVE_API_GET_USER_DATA = "recieve_api_get_user_data";
 export const RECIEVE_API_GET_USER_POSTS = "recieve_api_get_user_posts";
 export const RECIEVE_API_GET_USER_ALBUMS = "recieve_api_get_user_albums";
 export const RECIEVE_API_GET_USER_PHOTOS = "recieve_api_get_user_photos";
+
+export const REMOVE_USER = "remove_user";
