@@ -1,16 +1,17 @@
 import {
+  REQUEST_API_GET_USER_POSTS,
+  REQUEST_API_GET_USER_ALBUMS,
+  REQUEST_API_GET_USER_PHOTOS,
+  RECIEVE_API_GET_USER_DATA,
+  RECIEVE_API_GET_USER_POSTS,
+  RECIEVE_API_GET_USER_ALBUMS,
+  RECIEVE_API_GET_USER_PHOTOS,
+  REQUEST_API_GET_RIDE_DAYS,
+  RECIEVE_API_GET_RIDE_DAYS,
   REQUEST_API_GET_USER_DATA,
-  REMOVE_USER
+  REMOVE_USER,
+  CREATE_USER
 } from "../constants/ActionTypes";
-import { REQUEST_API_GET_USER_POSTS } from "../constants/ActionTypes";
-import { REQUEST_API_GET_USER_ALBUMS } from "../constants/ActionTypes";
-import { REQUEST_API_GET_USER_PHOTOS } from "../constants/ActionTypes";
-import { RECIEVE_API_GET_USER_DATA } from "../constants/ActionTypes";
-import { RECIEVE_API_GET_USER_POSTS } from "../constants/ActionTypes";
-import { RECIEVE_API_GET_USER_ALBUMS } from "../constants/ActionTypes";
-import { RECIEVE_API_GET_USER_PHOTOS } from "../constants/ActionTypes";
-import { REQUEST_API_GET_RIDE_DAYS } from "../constants/ActionTypes";
-import { RECIEVE_API_GET_RIDE_DAYS } from "../constants/ActionTypes";
 
 export const getUserData = () => {
   return {
@@ -81,5 +82,12 @@ export const removeUser = id => {
   return {
     type: REMOVE_USER,
     payload: id
+  };
+};
+
+export const createUser = user => {
+  return {
+    type: CREATE_USER,
+    payload: user
   };
 };

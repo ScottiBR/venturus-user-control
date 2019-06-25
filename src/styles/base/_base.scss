@@ -6,6 +6,8 @@ $placeholder-gray: #989898;
 $text-black: #333333;
 $table-even-rows: #f7f7f7;
 $tabke-row-hover: #e2e2e2;
+$button-gray: #e3e3e3;
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,8 +38,20 @@ body {
 }
 
 .app-main-content-body {
-  //padding: 0px 22px;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+.app-main-content-user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+}
+
+.flex-2 {
+  flex: 2;
 }

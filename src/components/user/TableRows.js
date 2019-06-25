@@ -47,10 +47,8 @@ const TableRows = props => {
 
   return (
     <tr className="table-body" key={id}>
-      <td className="remove-row">
-        <a onClick={() => props.handleRemoveUser(id)}>
-          <FontAwesomeIcon icon={faTrashAlt} color="#3ac4aa" />
-        </a>
+      <td className="remove-row" onClick={() => props.handleRemoveUser(id)}>
+        <FontAwesomeIcon icon={faTrashAlt} color="#3ac4aa" />
       </td>
       <td>{username}</td>
       <td>{name}</td>
