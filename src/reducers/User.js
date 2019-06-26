@@ -4,7 +4,8 @@ import {
   RECIEVE_API_GET_USER_POSTS,
   RECIEVE_API_GET_USER_ALBUMS,
   RECIEVE_API_GET_USER_PHOTOS,
-  REMOVE_USER
+  REMOVE_USER,
+  CREATE_USER
 } from "../constants/ActionTypes";
 
 const INIT_STATE = {
@@ -84,6 +85,13 @@ export default (state = INIT_STATE, action) => {
       return {
         ...state,
         userInfo: state.userInfo.filter(user => user.id !== action.payload)
+      };
+    }
+
+    case CREATE_USER: {
+      return {
+        ...state,
+        userInfo: [...state.userInfo, { ...action.payload }]
       };
     }
     default:

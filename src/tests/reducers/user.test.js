@@ -1,9 +1,5 @@
 import UserReduce from "../../reducers/User";
-import { removeUser, recieveUserData } from "../../actions";
-import {
-  RECIEVE_API_GET_USER_DATA,
-  REMOVE_USER
-} from "../../constants/ActionTypes";
+import { removeUser, recieveUserData, createUser } from "../../actions";
 
 const users = [
   {
@@ -72,4 +68,18 @@ test("Should remove the user id = 1", () => {
   const removeUserAction = removeUser(1);
   state = UserReduce(state, removeUserAction);
   expect(state.userInfo.filter(user => user.id !== 1).length).toBe(1);
+});
+
+test("Should insert users", () => {
+  const fakeUser = {
+    username: "GUi",
+    city: "BH",
+    name: "GUI",
+    email: "g@gmail.com",
+    rideGroup: 2,
+    dayOfWeek: ["Mon"]
+  };
+  const action = createUser(fakeUser);
+  const state = UserReduce(undefined, action);
+  expect(state.userInfo[0].username).toBe("GUi");
 });
