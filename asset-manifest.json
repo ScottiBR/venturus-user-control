@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/venturus-user-control/static/css/main.aedc4706.chunk.css",
+    "main.js": "/venturus-user-control/static/js/main.2178b863.chunk.js",
+    "main.js.map": "/venturus-user-control/static/js/main.2178b863.chunk.js.map",
+    "runtime~main.js": "/venturus-user-control/static/js/runtime~main.00902820.js",
+    "runtime~main.js.map": "/venturus-user-control/static/js/runtime~main.00902820.js.map",
+    "static/js/2.c5e891df.chunk.js": "/venturus-user-control/static/js/2.c5e891df.chunk.js",
+    "static/js/2.c5e891df.chunk.js.map": "/venturus-user-control/static/js/2.c5e891df.chunk.js.map",
+    "index.html": "/venturus-user-control/index.html",
+    "precache-manifest.372dcca4ad9f14cb734a030180add057.js": "/venturus-user-control/precache-manifest.372dcca4ad9f14cb734a030180add057.js",
+    "service-worker.js": "/venturus-user-control/service-worker.js",
+    "static/css/main.aedc4706.chunk.css.map": "/venturus-user-control/static/css/main.aedc4706.chunk.css.map"
+  }
+}
