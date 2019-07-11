@@ -3,8 +3,6 @@
 This it's a demo project build with React, Redux, Saga, SASS and Jest.
 This project contains a basic CRUD for users, using a form to create new users, and a table to display the users.
 
-See the preview in [https://scottibr.github.io/venturus-user-control/](https://scottibr.github.io/venturus-user-control/);
-
 ### Routes
 
 /users table of users;
